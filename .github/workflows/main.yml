@@ -1,0 +1,17 @@
+name: Extract tar.xz File on macOS
+
+on:
+ push:
+    branches:
+      - main
+
+jobs:
+ extract:
+    runs-on: macos-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Extract tar.xz file
+      run: tar -xf mesa-24.0.2.tar.xz -C
