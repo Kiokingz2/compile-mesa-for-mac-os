@@ -14,4 +14,4 @@ jobs:
       uses: actions/checkout@v2
 
     - name: Extract tarball file
-      run: tar -xcf mesa-24.0.2.tar.xz
+      run: tar -xf mesa-24.0.2.tar.xz -C main
