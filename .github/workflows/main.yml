@@ -14,9 +14,8 @@ jobs:
       uses: actions/checkout@v2
 
     - name: clone and compile
-      run: 
-            git clone https://gitlab.freedesktop.org/mesa/mesa
-            cd mesa
-            meson setup build -Dgallium-drivers=zink,iris,swrast -Dvulkan-drivers= --prefix=~/mesa-drivers
-            ninja -C build install 
-
+      run: |
+        git clone https://gitlab.freedesktop.org/mesa/mesa
+        cd mesa
+        meson setup build -Dgallium-drivers=zink,iris,swrast -Dvulkan-drivers= --prefix=~/mesa-drivers
+        ninja -C build install
