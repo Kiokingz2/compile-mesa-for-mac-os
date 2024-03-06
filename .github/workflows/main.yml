@@ -21,7 +21,7 @@ jobs:
         brew install meson
         brew install libclc
         brew uninstall cmake
-        pip3 install mako
+        pip install mako
 
     - name: clone and compile
       run: |
