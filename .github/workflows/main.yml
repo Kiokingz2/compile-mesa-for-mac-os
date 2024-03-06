@@ -1,4 +1,4 @@
-name: Extract tar.xz File on macOS
+name: clone and compile
 
 on:
  push:
@@ -13,9 +13,10 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@v2
 
-    - name: Extract tarball file
-      run: git clone https://gitlab.freedesktop.org/mesa/mesa
-           cd mesa
-           meson setup build -Dgallium-drivers=zink,iris,swrast -Dvulkan-drivers= --prefix=~/mesa-drivers
-           ninja -C build install 
+    - name: clone and compile
+      run: 
+            git clone https://gitlab.freedesktop.org/mesa/mesa
+            cd mesa
+            meson setup build -Dgallium-drivers=zink,iris,swrast -Dvulkan-drivers= --prefix=~/mesa-drivers
+            ninja -C build install 
 
