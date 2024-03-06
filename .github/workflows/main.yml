@@ -14,4 +14,8 @@ jobs:
       uses: actions/checkout@v2
 
     - name: Extract tarball file
-      run: tar -xzf mesa-24.0.2.tar.xz
+      run: git clone https://gitlab.freedesktop.org/mesa/mesa
+           cd mesa
+           meson setup build -Dgallium-drivers=zink,iris,swrast -Dvulkan-drivers= --prefix=~/mesa-drivers
+           ninja -C build install
+
