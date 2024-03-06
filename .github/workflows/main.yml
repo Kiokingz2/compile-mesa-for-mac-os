@@ -1,4 +1,4 @@
-name: clone and compile
+name: build mesa
 
 on:
  push:
@@ -12,6 +12,14 @@ jobs:
     steps:
     - name: Checkout code
       uses: actions/checkout@v2
+
+    - name: install dependencies
+      run: |
+        brew install pkg-config
+        brew install bison
+        brew install llvm
+        brew install meson
+        brew uninstall cmake
 
     - name: clone and compile
       run: |
