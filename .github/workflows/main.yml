@@ -1,4 +1,4 @@
-name: build mesa
+name: build and compile mesa
 
 on:
  push:
