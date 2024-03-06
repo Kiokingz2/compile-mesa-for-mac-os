@@ -15,6 +15,7 @@ jobs:
 
     - name: install dependencies
       run: |
+        brew install pip3
         brew install pkg-config
         brew install bison
         brew install llvm
